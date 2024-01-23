@@ -26,7 +26,7 @@ html, body {
   color: #757575;
 }
 
-.container {
+.container-SM {
   display: flex;
   gap: 20px;
   margin-bottom: 20px; 
