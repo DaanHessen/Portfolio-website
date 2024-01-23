@@ -8,7 +8,11 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 
+  /*animated text*/
 }
 .container {
   height: 100%;
@@ -21,6 +25,7 @@ html, body {
   font-weight: 100;
   font-size: 40px;
   color: #fafafa;
+  text-align: center;
 }
 .dud {
   color: #757575;
@@ -29,7 +34,7 @@ html, body {
 .container-SM {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px; 
+  margin-bottom: 30px; 
 }
 
 .icon {
@@ -38,7 +43,41 @@ html, body {
   transform: scale(0.6);
 }
 
+.icon::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: aquamarine;
+  transition: transform 0.3s;
+  border-radius: 30px;
+}
 
+.icon:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Use Media Queries for Responsive Adjustments */
+@media (max-width: 600px) { /* Adjust this breakpoint as needed */
+  .icon {
+    transform: scale(0.8); /* Make icons slightly larger */
+    padding: 15px; /* Increase padding for larger touch targets */
+  }
+
+  .button {
+    padding: 10px 20px; /* Increase button size */
+    font-size: 16px; /* Make the text inside buttons larger */
+  }
+
+  .container {
+    padding: 10px; /* Add padding to avoid elements touching screen edges */
+  }
+}
+
+/* icons */
 .popup {
   visibility: hidden;
   opacity: 0;
@@ -74,4 +113,25 @@ html, body {
 
 .container-SM a:hover ~ a {
   transform: translateX(100px);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+  background: #333;
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+}
+
+footer p {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 100;
+  font-size: 12px;
+  color: #fafafa;
+  margin: 0;
 }
