@@ -1,0 +1,62 @@
+/* Your existing CSS code */
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+html, body {
+  font-family: 'Roboto Mono', monospace;
+  background: #212121;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.text {
+  font-weight: 100;
+  font-size: 40px;
+  color: #fafafa;
+}
+.dud {
+  color: #757575;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px; /* Add some space between the text and icons */
+}
+
+.icon {
+  padding: 10px;
+  animation: icon3d 100ms 2;
+  color: #b9b9b9;
+  transform: scale(0.6);
+}
+
+.icon:hover {
+  animation: icon3d 200ms infinite;
+}
+
+@keyframes icon3d {
+  0% {
+    text-shadow: 5px 4px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
+  }
+  25% {
+    text-shadow: -5px -6px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
+  }
+  50% {
+    text-shadow: 5px -4px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
+  }
+  75% {
+    text-shadow: -8px -4px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
+  }
+  100% {
+    text-shadow: -5px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
+  }
+}
