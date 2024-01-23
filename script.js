@@ -53,17 +53,13 @@ class TextScramble {
   }}
 
 
-
-
-
-  
-
 const phrases = [
 'Hi,',
 'I\'m Daan Hessen.',
-'I\'m still creating my website.',
+'I\'m still working on my website.',
 'Want to see some of my work?',
-'Check out my GitHub.',
+'Check out my GitHub, LinkedIn or download my resume.',
+'Feel free to contact me through social media.',
 'Full website coming soon.'];
 
 
@@ -73,9 +69,9 @@ const fx = new TextScramble(el);
 let counter = 0;
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    let timeoutDuration = 1500; // default duration for all phrases except the last two
+    let timeoutDuration = 2500; // default duration for all phrases except the last two
     if (counter === phrases.length - 2) {
-      timeoutDuration = 1500; // duration for the second to last phrase
+      timeoutDuration = 2500; // duration for the second to last phrase
     }
     if (counter === phrases.length - 1) {
       timeoutDuration = 5000; // duration for the last phrase
