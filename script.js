@@ -59,7 +59,7 @@ const phrases = [
 'I\'m still working on my website.',
 'Want to see some of my work?',
 'Check out my GitHub, LinkedIn or download my resume.',
-'Feel free to contact me through social media.',
+'Feel free to contact me through social media or email.',
 'Full website coming soon.'];
 
 
