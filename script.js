@@ -1,4 +1,4 @@
-
+// text animation
 class TextScramble {
   constructor(el) {
     this.el = el;
@@ -56,6 +56,7 @@ class TextScramble {
 const phrases = [
 'Hi,',
 'I\'m Daan Hessen.',
+'I\'m studying ICT at Hogeschool Utrecht, focusing on software development.',
 'I\'m still working on my website.',
 'Want to see some of my work?',
 'Check out my GitHub, LinkedIn or download my resume.',
@@ -69,12 +70,9 @@ const fx = new TextScramble(el);
 let counter = 0;
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    let timeoutDuration = 2500; // default duration for all phrases except the last two
-    if (counter === phrases.length - 2) {
-      timeoutDuration = 2500; // duration for the second to last phrase
-    }
+    let timeoutDuration = 2500; 
     if (counter === phrases.length - 1) {
-      timeoutDuration = 5000; // duration for the last phrase
+      timeoutDuration = 5000; 
     }
     counter = (counter + 1) % phrases.length;
     setTimeout(next, timeoutDuration);
@@ -82,3 +80,51 @@ const next = () => {
 };
 
 next();
+
+document.querySelectorAll('.popup').forEach(popup => {
+  popup.fx = new TextScramble(popup);
+});
+
+// Function to initiate shift based on a larger estimated width
+function initiateShift(item) {
+  let popup = item.querySelector('.popup');
+  if (popup) {
+
+    let estimatedWidth = Math.min(300, Math.max(120, popup.textContent.length * 10)); 
+    let nextSiblings = getNextSiblings(item);
+
+    nextSiblings.forEach(sib => {
+      sib.style.transform = `translateX(${estimatedWidth + 15}px)`; 
+    });
+  }
+}
+
+
+document.querySelectorAll('.social-icon').forEach(item => {
+  item.addEventListener('mouseenter', event => {
+    initiateShift(item);
+
+    const popup = item.querySelector('.popup');
+    if (popup) {
+      popup.fx.setText(popup.textContent || '');
+    }
+  });
+
+  item.addEventListener('mouseleave', event => {
+    let nextSiblings = getNextSiblings(item);
+    nextSiblings.forEach(sib => {
+      sib.style.transform = `translateX(0px)`;
+    });
+  });
+});
+
+// Function to get all next siblings
+function getNextSiblings(elem) {
+  let siblings = [];
+  while (elem = elem.nextSibling) {
+    if (elem.nodeType === 1) {
+      siblings.push(elem);
+    }
+  }
+  return siblings;
+}

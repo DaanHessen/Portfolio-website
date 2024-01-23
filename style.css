@@ -34,29 +34,44 @@ html, body {
 
 .icon {
   padding: 10px;
-  animation: icon3d 100ms 2;
   color: #b9b9b9;
   transform: scale(0.6);
 }
 
-.icon:hover {
-  animation: icon3d 200ms infinite;
+
+.popup {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 8px;
+  z-index: 1;
+  transition: opacity 0.5s, left 0.5s;
 }
 
-@keyframes icon3d {
-  0% {
-    text-shadow: 5px 4px rgba(244,67,54,1), -5px -6px rgba(33,150,243,1);
-  }
-  25% {
-    text-shadow: -5px -6px rgba(244,67,54,1), 5px 4px rgba(33,150,243,1);
-  }
-  50% {
-    text-shadow: 5px -4px rgba(244,67,54,1), -8px 4px rgba(33,150,243,1);
-  }
-  75% {
-    text-shadow: -8px -4px rgba(244,67,54,1), -5px -4px rgba(33,150,243,1);
-  }
-  100% {
-    text-shadow: -5px 0 rgba(244,67,54,1), 5px -4px rgba(33,150,243,1);
-  }
+.icon:hover + .popup {
+  visibility: visible;
+  opacity: 1;
+  left: 110%;
+}
+
+.container-SM a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.4s;
+  text-decoration: none;
+}
+
+.container-SM a:hover {
+  transform: none !important;
+}
+
+.container-SM a:hover ~ a {
+  transform: translateX(100px);
 }
