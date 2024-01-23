@@ -1,4 +1,4 @@
-/* Your existing CSS code */
+
 @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
 html, body {
   font-family: 'Roboto Mono', monospace;
@@ -29,7 +29,7 @@ html, body {
 .container {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px; /* Add some space between the text and icons */
+  margin-bottom: 20px; 
 }
 
 .icon {
