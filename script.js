@@ -70,9 +70,9 @@ const fx = new TextScramble(el);
 let counter = 0;
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    let timeoutDuration = 2500; 
+    let timeoutDuration = 3500; 
     if (counter === phrases.length - 1) {
-      timeoutDuration = 5000; 
+      timeoutDuration = 8000; 
     }
     counter = (counter + 1) % phrases.length;
     setTimeout(next, timeoutDuration);
