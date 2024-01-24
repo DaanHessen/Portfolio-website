@@ -65,9 +65,9 @@ html, body {
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%) scaleX(0);
-    width: 100%;
+    width: 50%;
     height: 2px;
-    background-color: aquamarine;
+    background-color: #98B4D4;
     transition: transform 0.3s;
     border-radius: 30px;
 }
@@ -94,7 +94,7 @@ html, body {
   }
 
   .container-SM a .text {
-      position: absolute; /* Overlay text above the icon */ !important;
+      position: absolute; /* Overlay text above the icon */ 
       bottom: 50%; /* Adjust as needed to position correctly */
       left: 50%;
       transform: translate(-50%, 50%);
