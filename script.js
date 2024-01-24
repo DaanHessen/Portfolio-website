@@ -58,8 +58,8 @@ const phrases = [
 'I\'m Daan Hessen.',
 'I\'m studying ICT at Hogeschool Utrecht, focusing on software development.',
 'I\'m still working on a portfolio website.',
-'Interested in my projects? You can find me on:',
-'GitHub, Instagram, LinkedIn or you can download my resume.',
+'Interested in my projects and contributions?',
+'Check out my GitHub, Instagram, LinkedIn or download my resume.',
 'Feel free to contact me through social media or email.',
 'Full website coming soon...'];
 
@@ -70,12 +70,14 @@ const fx = new TextScramble(el);
 let counter = 0;
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    let timeoutDuration = 3500; 
+    let timeoutDuration = 2500; 
     if (counter === phrases.length - 1) {
       timeoutDuration = 8000; 
     }
-    counter = (counter + 1) % phrases.length;
-    setTimeout(next, timeoutDuration);
+    setTimeout(() => {
+      counter = (counter + 1) % phrases.length;
+      setTimeout(next, 1000); // Additional delay before going to the next text
+    }, timeoutDuration);
   });
 };
 
