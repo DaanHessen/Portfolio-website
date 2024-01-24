@@ -58,7 +58,7 @@ const phrases = [
 'I\'m Daan Hessen.',
 'I\'m studying ICT at Hogeschool Utrecht, focusing on software development.',
 'I\'m still working on a portfolio website.',
-'You can find me on',
+'Interested in my projects? You can find me on:',
 'GitHub, Instagram, LinkedIn or you can download my resume.',
 'Feel free to contact me through social media or email.',
 'Full website coming soon...'];
