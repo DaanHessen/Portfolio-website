@@ -61,7 +61,7 @@ const phrases = [
 'Interested in my projects and contributions?',
 'Check out my GitHub, Instagram, LinkedIn or download my resume.',
 'Feel free to contact me through social media or email.',
-'Full website coming soon...'];
+'Full portfolio coming soon...'];
 
 
 const el = document.querySelector('.text');
